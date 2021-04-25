@@ -32,4 +32,4 @@ def predict():
         'prediction': pred
     }
 
-app.run(port=8000)
+app.run(port=3000)
