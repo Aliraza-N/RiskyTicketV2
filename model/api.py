@@ -1,6 +1,6 @@
 import flask
 from flask import request, jsonify
-import numpy
+import numpy as np
 import json
 
 from model import predict_risk
@@ -20,7 +20,7 @@ def convert_time(time_str):
     time_sin = np.sin(2 * np.pi * time/23.99)
     return time_cos, time_sin
 
-@app.route('/predict/', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
     time_str = request.form['time']
     time_cos, time_sin = convert_time(time_str)

@@ -16,5 +16,5 @@ def prepare_input(time_cos, time_sin, lat, lon):
 
 def predict_risk(time_cos, time_sin, lat, lon):
     pred_input = prepare_input(time_cos, time_sin, lat, lon)
-    ypred = bst.predict(dtest)
+    ypred = model.predict(pred_input)
     return int(ypred[0])
